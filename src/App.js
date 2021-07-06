@@ -1,9 +1,14 @@
 import { Box } from './components/Box';
+import { Dropzone } from './components/Dropzone';
 
 function App() {
+	const onDrop = (acceptedFiles) => {
+		console.log(acceptedFiles);
+	}
+	
   return (
     <Box>
-      Hello
+      <Dropzone onDrop={onDrop} accept='image/*' />
     </Box>
   );
 }
