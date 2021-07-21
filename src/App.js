@@ -1,14 +1,13 @@
 import { Box } from './components/Box';
-import { Dropzone } from './components/Dropzone';
+import { FileContextProvider } from './contexts/FileContext';
+import { Uploads } from './components/Uploads';
 
 function App() {
-	const onDrop = (acceptedFiles) => {
-		console.log(acceptedFiles);
-	}
-	
   return (
     <Box>
-      <Dropzone onDrop={onDrop} accept='image/*' />
+			<FileContextProvider>
+				<Uploads />
+			</FileContextProvider>
     </Box>
   );
 }
