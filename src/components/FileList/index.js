@@ -22,7 +22,7 @@ export function FileList(props) {
 	}, []);
 	
 	return (
-		<ul>
+		<ul className="filelist">
 			{fileList.map(file => (
 				<FileInfo key={file.id} data={{
 					id: file.id,

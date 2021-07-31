@@ -39,6 +39,8 @@ export function Uploads(props) {
 	}
 	
 	return (
-		<Dropzone onDrop={onDrop} accept='image/*' />
+		<header className="uploads">
+			<Dropzone onDrop={onDrop} accept='image/*' />
+		</header>
 	);
 }
