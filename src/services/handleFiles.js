@@ -2,7 +2,18 @@ import { uniqueId } from 'lodash';
 import filesize from 'filesize';
 
 export function getObjectOnUploaded(uploadedFiles) {
-	// code
+	return uploadedFiles.map(uploadedFile => ({
+		file: null,
+		id: uploadedFile.id,
+		name: uploadedFile.name,
+		readableSize: filesize(uploadedFile.size) || '-- --',
+		preview: '',
+		error: false,
+		uploaded: true,
+		progress: 100,
+		key: uploadedFile.key,
+		url: uploadedFile.url,
+	}));
 }
 
 export function getObjectOnDropped(droppedFiles) {
